@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Local;
 
 import fr.afcepf.al28.ws.tax.entity.Tax;
+import fr.afcepf.al28.ws.tax.exception.TaxWSException;
 
 @Local
 public interface ITax {
@@ -15,8 +16,8 @@ public interface ITax {
 
 	String ajouterTax(Tax t);
 
-	Tax getTaxByCodePays(String codePays);
+	Tax getTaxByCodePays(String codePays) throws TaxWSException;
 
-	List<Tax> getAllTaxes();
+	List<Tax> getAllTaxes() throws TaxWSException;
 	
 }
